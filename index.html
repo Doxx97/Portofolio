@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raihan Gusta | Front-end Developer</title>
+    <meta name="description" content="Portofolio Raihan Gusta, mahasiswa Pendidikan Teknik Informatika dan front-end developer." />
+
+    <link rel="icon" href="images/favicon/logo1.png" type="image/png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- nav -->
+    <nav class="nav" id="siteNav">
+      <div class="nav-inner">
+        <a class="logo" href="#Home">Raihan<span>.dev</span></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Project</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- akhir nav -->
+
+    <!-- hero -->
+    <header class="hero" id="Home">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <p class="hero-role">Front-end Developer</p>
+          <h1 class="hero-name">Raihan Gusta</h1>
+          <p class="hero-desc">Mahasiswa Pendidikan Teknik Informatika di Universitas Negeri Malang. Saya suka merancang dan membangun antarmuka web yang rapi, cepat, dan enak digunakan — dari HTML/CSS/JS murni sampai Laravel.</p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">Lihat Proyek</a>
+            <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <div class="photo-frame">
+            <img src="images/foto.png" alt="Foto Raihan Gusta" />
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- akhir hero -->
+
+    <!-- about -->
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>Tentang Saya</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              Halo, perkenalkan nama saya Raihan Gusta, biasa dipanggil Gusta. Saya mahasiswa Universitas Negeri Malang jurusan Pendidikan Teknik Informatika dengan minat utama di bidang web development, khususnya front-end. Saya terbiasa
+              membangun website dengan HTML, CSS, dan JavaScript, dan juga menggunakan framework Bootstrap untuk mempercepat pengembangan antarmuka.
+            </p>
+            <p>Saat ini saya sedang memperdalam PHP dan Laravel untuk melengkapi kemampuan front-end saya dengan sisi back-end, supaya bisa membangun aplikasi web secara menyeluruh.</p>
+          </div>
+          <div class="about-skills">
+            <p class="skills-label">Kemampuan teknis</p>
+
+            <div class="skill">
+              <span class="skill-name"><i class="fa-brands fa-html5"></i>HTML</span>
+              <div class="progress"><div class="progress-bar" data-width="100%"></div></div>
+              <span class="skill-pct">100%</span>
+            </div>
+
+            <div class="skill">
+              <span class="skill-name"><i class="fa-brands fa-css3-alt"></i>CSS</span>
+              <div class="progress"><div class="progress-bar" data-width="85%"></div></div>
+              <span class="skill-pct">85%</span>
+            </div>
+
+            <div class="skill">
+              <span class="skill-name"><i class="fa-brands fa-js"></i>JavaScript</span>
+              <div class="progress"><div class="progress-bar" data-width="60%"></div></div>
+              <span class="skill-pct">60%</span>
+            </div>
+
+            <div class="skill">
+              <span class="skill-name"><i class="fa-brands fa-php"></i>PHP</span>
+              <div class="progress"><div class="progress-bar" data-width="85%"></div></div>
+              <span class="skill-pct">85%</span>
+            </div>
+
+            <div class="skill">
+              <span class="skill-name"><i class="fa-brands fa-laravel"></i>Laravel</span>
+              <div class="progress"><div class="progress-bar" data-width="70%"></div></div>
+              <span class="skill-pct">70%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- akhir about -->
+
+    <!-- projects -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <h2>Proyek Saya</h2>
+        </div>
+        <!-- Ganti judul, deskripsi, link, dan gambar tiap proyek di bawah ini dengan proyek asli kamu -->
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-image">
+              <img src="images/projects/1.png" alt="SINILAI" />
+            </div>
+            <div class="project-body">
+              <h3>SINILAI - Sistem Informasi Nilai</h3>
+              <p>Deskripsi singkat tentang proyek ini, masalah yang diselesaikan, dan teknologi yang dipakai.</p>
+              <a href="#" class="project-link">Lihat detail <i class="bi bi-arrow-up-right"></i></a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="images/projects/2.jpg" alt="Tangkapan layar Proyek 2" />
+            </div>
+            <div class="project-body">
+              <h3>Nama Proyek 2</h3>
+              <p>Deskripsi singkat tentang proyek ini, masalah yang diselesaikan, dan teknologi yang dipakai.</p>
+              <a href="#" class="project-link">Lihat detail <i class="bi bi-arrow-up-right"></i></a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="images/projects/3.jpg" alt="Tangkapan layar Proyek 3" />
+            </div>
+            <div class="project-body">
+              <h3>Nama Proyek 3</h3>
+              <p>Deskripsi singkat tentang proyek ini, masalah yang diselesaikan, dan teknologi yang dipakai.</p>
+              <a href="#" class="project-link">Lihat detail <i class="bi bi-arrow-up-right"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- akhir projects -->
+
+    <!-- contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>Hubungi Saya</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <p>Terbuka untuk kolaborasi, magang, atau sekadar diskusi seputar web development. Isi form di samping atau hubungi saya langsung lewat kanal berikut.</p>
+            <ul class="contact-links">
+              <li>
+                <a href="https://www.instagram.com/screetyo"><i class="bi bi-instagram"></i> @screetyo</a>
+              </li>
+              <li>
+                <a href="https://github.com/Doxx97"><i class="bi bi-github"></i> Doxx97</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="contact-form-wrap">
+            <div class="alert-inline my-alert d-none" role="alert" id="inlineAlert">Pesan kamu sudah berhasil dikirim. Terima kasih!</div>
+            <form name="submit-to-google-sheet" class="contact-form">
+              <div class="field">
+                <label for="name">Nama Lengkap</label>
+                <input type="text" id="name" name="nama" autocomplete="name" />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" />
+              </div>
+              <div class="field">
+                <label for="pesan">Pesan</label>
+                <textarea id="pesan" name="pesan" rows="4"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-kirim">Kirim Pesan</button>
+              <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+                <span class="spinner" aria-hidden="true"></span>
+                <span>Mengirim...</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- akhir contact -->
+
+    <!-- footer -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; 2026 Raihan Gusta. Dibangun dengan HTML, CSS, dan JavaScript.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/screetyo" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://github.com/Doxx97" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        </div>
+      </div>
+    </footer>
+    <!-- akhir footer -->
+
+    <!-- popup alert -->
+    <div id="popupAlert" class="popup-alert d-none" role="status" aria-live="polite">
+      <div class="popup-box">
+        <div class="popup-icon" id="popupIcon"></div>
+        <p id="popupMessage"></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
