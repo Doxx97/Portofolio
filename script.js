@@ -1,8 +1,12 @@
 // ====== KIRIM FORM KE GOOGLE SHEET ======
-const scriptURL = 'https://script.google.com/macros/s/AKfycbwUsuHqu6O4GBLyEnIQvxhpwK4n8bwUpfCUGFjTIrfisi0iDtkv9FV_j1x8_pMDfci59w/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbynMnPeENDJpGXX0jOZ4Lu52LjP4WizKfB_ZchvpK11e6kSldrq8PYBZl12qKqG9s3N/exec';
 const form = document.forms['submit-to-google-sheet'];
 const btnKirim = document.querySelector('.btn-kirim');
 const btnLoading = document.querySelector('.btn-loading');
+
+// catat waktu halaman dimuat, dipakai untuk deteksi bot yang submit terlalu cepat
+document.getElementById('loadedAt').value = Date.now();
+const MIN_FILL_TIME_MS = 3000; // manusia butuh minimal ~3 detik untuk isi form
 
 function showPopup(type, message) {
   const popup = document.getElementById('popupAlert');
@@ -26,9 +30,26 @@ form.addEventListener('submit', (e) => {
   const nama = form.nama.value.trim();
   const email = form.email.value.trim();
   const pesan = form.pesan.value.trim();
+  const honeypot = form.website.value.trim();
+  const loadedAt = Number(form.loadedAt.value);
+  const elapsed = Date.now() - loadedAt;
 
   if (!nama || !email || !pesan) {
     showPopup('error', 'Semua kolom harus diisi!');
+    return;
+  }
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    showPopup('error', 'Format email tidak valid!');
+    return;
+  }
+
+  // bot terdeteksi: pura-pura sukses supaya bot tidak tahu ia diblokir, tapi tidak benar-benar mengirim apa pun
+  if (honeypot || elapsed < MIN_FILL_TIME_MS) {
+    showPopup('success', 'Pesan berhasil dikirim!');
+    form.reset();
+    document.getElementById('loadedAt').value = Date.now();
     return;
   }
 
@@ -36,11 +57,17 @@ form.addEventListener('submit', (e) => {
   btnLoading.classList.remove('d-none');
 
   fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-    .then(() => {
+    .then((response) => response.json())
+    .then((data) => {
       btnKirim.classList.remove('d-none');
       btnLoading.classList.add('d-none');
-      showPopup('success', 'Pesan berhasil dikirim!');
-      form.reset();
+      if (data.result === 'success') {
+        showPopup('success', 'Pesan berhasil dikirim!');
+        form.reset();
+      } else {
+        showPopup('error', data.message || 'Pesan gagal dikirim, coba lagi.');
+      }
+      document.getElementById('loadedAt').value = Date.now();
     })
     .catch((error) => {
       btnKirim.classList.remove('d-none');
@@ -48,6 +75,45 @@ form.addEventListener('submit', (e) => {
       showPopup('error', 'Terjadi kesalahan, coba lagi!');
       console.error('Error!', error.message);
     });
+});
+
+// ====== DARK MODE ======
+const themeToggle = document.getElementById('themeToggle');
+const root = document.documentElement;
+
+function getStoredTheme() {
+  try {
+    return localStorage.getItem('theme');
+  } catch (e) {
+    return null;
+  }
+}
+
+function storeTheme(value) {
+  try {
+    localStorage.setItem('theme', value);
+  } catch (e) {
+    /* localStorage tidak tersedia, tema hanya berlaku untuk sesi ini */
+  }
+}
+
+function applyTheme(theme) {
+  if (theme === 'dark') {
+    root.setAttribute('data-theme', 'dark');
+  } else {
+    root.removeAttribute('data-theme');
+  }
+}
+
+const savedTheme = getStoredTheme();
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+
+themeToggle.addEventListener('click', () => {
+  const isDark = root.getAttribute('data-theme') === 'dark';
+  const next = isDark ? 'light' : 'dark';
+  applyTheme(next);
+  storeTheme(next);
 });
 
 // ====== MOBILE NAV TOGGLE ======
@@ -97,6 +163,41 @@ const revealObserver = new IntersectionObserver(
 );
 
 revealTargets.forEach((el) => revealObserver.observe(el));
+
+// ====== ACTIVE NAV LINK SAAT SCROLL ======
+const sections = document.querySelectorAll('section[id], header[id]');
+const navAnchors = document.querySelectorAll('.nav-links a');
+
+const navObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navAnchors.forEach((link) => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        });
+      }
+    });
+  },
+  { rootMargin: '-40% 0px -55% 0px', threshold: 0 },
+);
+
+sections.forEach((section) => navObserver.observe(section));
+
+// ====== BACK TO TOP BUTTON ======
+const backToTop = document.getElementById('backToTop');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    backToTop.classList.add('show');
+  } else {
+    backToTop.classList.remove('show');
+  }
+});
+
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
 // ====== ANIMASI PROGRESS BAR SKILL ======
 const progressBars = document.querySelectorAll('.progress-bar');
