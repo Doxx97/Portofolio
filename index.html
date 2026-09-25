@@ -1,234 +1,265 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portofolio - Goesta1</title>
+    <title>Raihan Gusta | Front-end Developer</title>
+    <meta name="description" content="Portofolio Raihan Gusta, mahasiswa Pendidikan Teknik Informatika dan front-end developer." />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Raihan Gusta | Front-end Developer" />
+    <meta property="og:description" content="Portofolio Raihan Gusta, mahasiswa Pendidikan Teknik Informatika dan front-end developer." />
+    <meta property="og:image" content="https://raihangusta.com/images/og-image.jpg" />
+    <meta property="og:url" content="https://raihangusta.com/" />
+    <meta property="og:site_name" content="Raihan.dev" />
 
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Raihan Gusta | Front-end Developer" />
+    <meta name="twitter:description" content="Portofolio Raihan Gusta, mahasiswa Pendidikan Teknik Informatika dan front-end developer." />
+    <meta name="twitter:image" content="https://raihangusta.com/images/og-image.jpg" />
     <link rel="icon" href="images/favicon/logo1.png" type="image/png" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <script>
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+      })();
+    </script>
   </head>
-  <body id="Home">
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark shadow fixed-top" style="background-color: #842a3b">
-      <div class="container">
-        <a class="navbar-brand" href="#">Raihan Gusta</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#Home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#projects">Project</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
+  <body>
+    <!-- nav -->
+    <nav class="nav" id="siteNav">
+      <div class="nav-inner">
+        <a class="logo" href="#Home">Raihan<span>.dev</span></a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Project</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+          <button class="theme-toggle" id="themeToggle" aria-label="Ganti mode terang/gelap">
+            <i class="bi bi-sun-fill"></i>
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+          <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
         </div>
       </div>
     </nav>
-    <!-- akhir navbar -->
+    <!-- akhir nav -->
 
-    <!-- jumbotron -->
-    <section class="jumbotron text-center">
-      <img src="images/foto.jpg" alt="Profile" width="200" class="rounded-circle img-thumbnail shadow" />
-      <h1 class="display-4">Raihan Gusta</h1>
-      <p class="lead">Student | Web Developer</p>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#ffffff"
-          fill-opacity="1"
-          d="M0,128L48,144C96,160,192,192,288,197.3C384,203,480,181,576,186.7C672,192,768,224,864,229.3C960,235,1056,213,1152,186.7C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-        ></path>
-      </svg>
-    </section>
-    <!-- akhir jumbotron -->
+    <!-- hero -->
+    <header class="hero" id="Home">
+      <div class="hero-grid-bg" aria-hidden="true">
+        <span class="comet"></span>
+        <span class="comet"></span>
+        <span class="comet"></span>
+      </div>
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <p class="hero-role">Front-end Developer</p>
+          <h1 class="hero-name">Raihan Gusta</h1>
+          <p class="hero-desc">Mahasiswa Pendidikan Teknik Informatika di Universitas Negeri Malang. Saya suka merancang dan membangun antarmuka web yang rapi, cepat, dan enak digunakan — dari HTML/CSS/JS murni sampai Laravel.</p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">Lihat Proyek</a>
+            <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
+            <a href="files/cv-raihan-gusta.pdf" class="btn btn-outline" download> <i class="bi bi-download"></i> Download CV </a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <div class="photo-frame">
+            <img src="images/foto.jpg" alt="Foto Raihan Gusta" />
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- akhir hero -->
 
     <!-- about -->
     <section id="about">
       <div class="container">
-        <div class="row text-center mb-3">
-          <div class="col">
-            <h2>About Me</h2>
-          </div>
+        <div class="section-head">
+          <h2>Tentang Saya</h2>
         </div>
-        <div class="row justify-content-center fs-5 text-center">
-          <div class="col-md-4">
+        <div class="about-grid">
+          <div class="about-text">
             <p>
-              Halo perkenalkan nama saya Raihan Gusta, panggilan saya Gusta. Saya merupakan seorang mahasiswa Universitas Negeri Malang jurusan Pendidikan Teknik Informatika. Saya memiliki minat di bidang web development. Saya memiliki
-              kemampuan dalam membuat website menggunakan HTML, CSS, dan JavaScript. Saya juga memiliki kemampuan dalam membuat website menggunakan framework Bootstrap. Saya memiliki minat pada bidang web development lebih tepatnya pada
-              bidang front end. Itu merupakan narasi singkat tentang saya.
+              Halo, perkenalkan nama saya Raihan Gusta, biasa dipanggil Gusta. Saya mahasiswa Universitas Negeri Malang jurusan Pendidikan Teknik Informatika dengan minat utama di bidang web development, khususnya front-end. Saya terbiasa
+              membangun website dengan HTML, CSS, dan JavaScript, dan juga menggunakan framework Bootstrap untuk mempercepat pengembangan antarmuka.
             </p>
+            <p>Saat ini saya sedang memperdalam PHP dan Laravel untuk melengkapi kemampuan front-end saya dengan sisi back-end, supaya bisa membangun aplikasi web secara menyeluruh.</p>
           </div>
-          <div class="col-md-4">
-            <p>Program yang saya pahami</p>
+          <div class="about-skills">
+            <p class="skills-label">Kemampuan teknis</p>
 
-            <div class="skill mb-3">
-              <span><i class="fa-brands fa-html5 text-danger me-3"></i>HTML</span>
-              <div class="progress">
-                <div class="progress-bar bg-danger" data-width="100%" style="width: 0%">100%</div>
-              </div>
+            <div class="skill">
+              <span class="skill-name"><i class="fa-brands fa-html5"></i>HTML</span>
+              <div class="progress"><div class="progress-bar" data-width="100%"></div></div>
+              <span class="skill-pct">100%</span>
             </div>
 
-            <div class="skill mb-3">
-              <span><i class="fa-brands fa-css3-alt text-primary me-3"></i>CSS</span>
-              <div class="progress">
-                <div class="progress-bar bg-danger" data-width="85%" style="width: 0%">85%</div>
-              </div>
+            <div class="skill">
+              <span class="skill-name"><i class="fa-brands fa-css3-alt"></i>CSS</span>
+              <div class="progress"><div class="progress-bar" data-width="85%"></div></div>
+              <span class="skill-pct">85%</span>
             </div>
 
-            <div class="skill mb-3">
-              <span><i class="fa-brands fa-js text-warning me-3"></i>JavaScript</span>
-              <div class="progress">
-                <div class="progress-bar bg-danger" data-width="60%" style="width: 0%">60%</div>
-              </div>
+            <div class="skill">
+              <span class="skill-name"><i class="fa-brands fa-js"></i>JavaScript</span>
+              <div class="progress"><div class="progress-bar" data-width="60%"></div></div>
+              <span class="skill-pct">60%</span>
             </div>
 
-            <div class="skill mb-3">
-              <span><i class="fa-brands fa-php text-info me-2"></i>PHP</span>
-              <div class="progress">
-                <div class="progress-bar bg-danger" data-width="85%" style="width: 0%">85%</div>
-              </div>
+            <div class="skill">
+              <span class="skill-name"><i class="fa-brands fa-php"></i>PHP</span>
+              <div class="progress"><div class="progress-bar" data-width="85%"></div></div>
+              <span class="skill-pct">85%</span>
             </div>
 
-            <div class="skill mb-3">
-              <span><i class="fa-brands fa-laravel text-danger me-3"></i>Laravel</span>
-              <div class="progress">
-                <div class="progress-bar bg-danger" data-width="70%" style="width: 0%">70%</div>
-              </div>
+            <div class="skill">
+              <span class="skill-name"><i class="fa-brands fa-laravel"></i>Laravel</span>
+              <div class="progress"><div class="progress-bar" data-width="70%"></div></div>
+              <span class="skill-pct">70%</span>
             </div>
           </div>
         </div>
       </div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#f5daa7"
-          fill-opacity="1"
-          d="M0,96L40,112C80,128,160,160,240,154.7C320,149,400,107,480,112C560,117,640,171,720,181.3C800,192,880,160,960,144C1040,128,1120,128,1200,154.7C1280,181,1360,235,1400,261.3L1440,288L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
-        ></path>
-      </svg>
     </section>
     <!-- akhir about -->
 
-    <!-- Project -->
+    <!-- projects -->
     <section id="projects">
       <div class="container">
-        <div class="row text-center mb-3">
-          <div class="col">
-            <h2>My Project</h2>
-          </div>
+        <div class="section-head">
+          <h2>Proyek Saya</h2>
         </div>
-        <div class="row">
-          <div class="col-md-4 mb-3">
-            <div class="card project-card">
-              <img src="images/projects/1.jpg" class="card-img-top" alt="Project 1" />
-              <div class="card-body">
-                <p class="card-text">Some quick example text ...</p>
-              </div>
+        <!-- Ganti judul, deskripsi, link, dan gambar tiap proyek di bawah ini dengan proyek asli kamu -->
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-image">
+              <img src="images/projects/1.png" alt="Tangkapan layar Proyek 1" />
             </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <div class="card project-card">
-              <img src="images/projects/2.jpg" class="card-img-top" alt="Project 2" />
-              <div class="card-body">
-                <p class="card-text">Some quick example text ...</p>
-              </div>
+            <div class="project-body">
+              <h3>SINILAI</h3>
+              <p>Sinilai merupakan aplikasi e-rapor yang dikembangkan oleh tim kami untuk .</p>
+              <a href="https://github.com/Doxx97/SistemInformasiNilai.git" class="project-link">Lihat detail <i class="bi bi-arrow-up-right"></i></a>
             </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <div class="card project-card">
-              <img src="images/projects/3.jpg" class="card-img-top" alt="Project 3" />
-              <div class="card-body">
-                <p class="card-text">Some quick example text ...</p>
-              </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="images/projects/2.jpg" alt="Tangkapan layar Proyek 2" />
             </div>
-          </div>
+            <div class="project-body">
+              <h3>Benno Store</h3>
+              <p>Deskripsi singkat tentang proyek ini, masalah yang diselesaikan, dan teknologi yang dipakai.</p>
+              <a href="https://github.com/Doxx97/bennostore.git" class="project-link">Lihat detail <i class="bi bi-arrow-up-right"></i></a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="images/projects/3.jpg" alt="Tangkapan layar Proyek 3" />
+            </div>
+            <div class="project-body">
+              <h3>Nama Proyek 3</h3>
+              <p>Deskripsi singkat tentang proyek ini, masalah yang diselesaikan, dan teknologi yang dipakai.</p>
+              <a href="#" class="project-link">Lihat detail <i class="bi bi-arrow-up-right"></i></a>
+            </div>
+          </article>
         </div>
       </div>
-
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#ffffff"
-          fill-opacity="1"
-          d="M0,224L24,208C48,192,96,160,144,170.7C192,181,240,235,288,240C336,245,384,203,432,202.7C480,203,528,245,576,250.7C624,256,672,224,720,192C768,160,816,128,864,117.3C912,107,960,117,1008,144C1056,171,1104,213,1152,224C1200,235,1248,213,1296,202.7C1344,192,1392,192,1416,192L1440,192L1440,320L0,320Z"
-        ></path>
-      </svg>
     </section>
+    <!-- akhir projects -->
 
-    <!-- akhir Project -->
-
-    <!--Contact-->
-    <section id="contact" clas="pb-5">
+    <!-- contact -->
+    <section id="contact">
       <div class="container">
-        <div class="row text-center mb-3">
-          <div class="col">
-            <h2>Contact Me</h2>
-          </div>
+        <div class="section-head">
+          <h2>Hubungi Saya</h2>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-md-6">
-            <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
-              <strong>Pesan anda telah terkirim</strong> Terimakasih atas pesan anda.
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            <form name="submit-to-google-sheet">
-              <div class="mb-3">
-                <label for="name" class="form-label">Nama Lengkap</label>
-                <input type="text" class="form-control" id="name" aria-describedby="name" name="nama" />
-                <div id="name" class="form-text">Please input your full name</div>
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" />
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-              </div>
-              <div class="mb-3">
-                <label for="Pesan" class="form-label">Pesan</label>
-                <textarea class="form-control" id="Pesan" rows="3" name="pesan"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary btn-kirim">Kirim</button>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <p>Terbuka untuk kolaborasi, magang, atau sekadar diskusi seputar web development. Isi form di samping atau hubungi saya langsung lewat kanal berikut.</p>
+            <ul class="contact-links">
+              <li>
+                <a href="https://www.instagram.com/screetyo"><i class="bi bi-instagram"></i> @screetyo</a>
+              </li>
+              <li>
+                <a href="https://github.com/Doxx97"><i class="bi bi-github"></i> Doxx97</a>
+              </li>
+            </ul>
+          </div>
 
-              <button class="btn btn-primary d-none btn-loading" type="button" disabled>
-                <span class="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
-                <span role="status">Loading...</span>
+          <div class="contact-form-wrap">
+            <div class="alert-inline my-alert d-none" role="alert" id="inlineAlert">Pesan kamu sudah berhasil dikirim. Terima kasih!</div>
+            <form name="submit-to-google-sheet" class="contact-form">
+              <!-- Honeypot: field ini disembunyikan dari manusia lewat CSS, tapi bot form-filler biasanya tetap mengisinya -->
+              <div class="hp-field" aria-hidden="true">
+                <label for="website">Jangan isi kolom ini</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+              </div>
+              <input type="hidden" name="loadedAt" id="loadedAt" />
+
+              <div class="field">
+                <label for="name">Nama Lengkap</label>
+                <input type="text" id="name" name="nama" autocomplete="name" required maxlength="100" />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" required maxlength="100" />
+              </div>
+              <div class="field">
+                <label for="pesan">Pesan</label>
+                <textarea id="pesan" name="pesan" rows="4" required maxlength="2000"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-kirim">Kirim Pesan</button>
+              <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+                <span class="spinner" aria-hidden="true"></span>
+                <span>Mengirim...</span>
               </button>
             </form>
-            <div class="alert alert-success my-alert d-none mt-3" role="alert">✅ Pesan kamu sudah berhasil dikirim!</div>
           </div>
         </div>
       </div>
     </section>
-    <!-- akhir Contact -->
+    <!-- akhir contact -->
 
     <!-- footer -->
-    <footer class="text-white text-center pb-2" style="background-color: #842a3b">
-      <p>
-        Created for portofolio by <a href="https://www.instagram.com/screetyo" class="text-white fw-bold">Raihan Gusta</a> <br />Made with Bootstrap 5.0
-        <br />
-        <a href="https://www.instagram.com/screetyo"><i class="bi bi-instagram"></i></a>
-        <a href="https://github.com/Doxx97"><i class="bi bi-github"></i></a>
-      </p>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; 2026 Raihan Gusta. Dibangun dengan HTML, CSS, dan JavaScript.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/screetyo" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://github.com/Doxx97" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        </div>
+      </div>
     </footer>
+    <!-- akhir footer -->
 
-    <!-- ALERT POPUP -->
-    <div id="popupAlert" class="popup-alert d-none">
+    <!-- popup alert -->
+    <div id="popupAlert" class="popup-alert d-none" role="status" aria-live="polite">
       <div class="popup-box">
         <div class="popup-icon" id="popupIcon"></div>
         <p id="popupMessage"></p>
       </div>
     </div>
+
+    <!-- back to top -->
+    <button id="backToTop" class="back-to-top" aria-label="Kembali ke atas">
+      <i class="bi bi-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
   </body>
